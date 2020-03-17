@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DemoMVC.Models.EMPDATA>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee Details</h2>
+
+@using (Html.BeginForm("Display","CheckBox"))
+{
+
+    if (Model != null)
+    {
+        <table>
+            <tr>
+                <th>   </th>
+                <th>Empno</th>
+                <th>Ename</th>
+                <th>Job</th>
+                <th>MGR</th>
+                <th>Hiredate</th>
+                <th>salary</th>
+                <th>comm</th>
+                <th>deptno</th>
+            </tr>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@Html.CheckBox("cbemp", new { @value=i.EMPNO})</td>
+                    <td>@i.EMPNO</td>
+                    <td>@i.ENAME</td>
+                    <td>@i.JOB</td>
+                    <td>@i.MGR</td>
+                    <td>@i.HIREDATE</td>
+                    <td>@i.SAL</td>
+                    <td>@i.COMM</td>
+                    <td>@i.DEPTNO</td>
+
+                </tr>
+            }
+            <tr><td><input type="submit"/></td></tr>
+        </table>
+    }
+}
+
+

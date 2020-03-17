@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<h2></h2>
+
+@using (Html.BeginForm("SendEmp", "Database"))
+{
+    <table>
+        <tr>
+            <td>Enter Ename</td>
+            <td>@Html.DropDownList("ddlEmpno", new SelectList(ViewBag.EL, "Empno", "Ename"), "Select", new { onblur = "func1();" })</td>
+        </tr>
+       
+    </table>
+    if (ViewBag.msg != null)
+    { 
+        <h3>@ViewBag.msg</h3>
+    }
+}
+
+<script>
+    function func1() {
+        var empno = document.getElementById("ddlEmpno").value;
+        
+        if (empno.Length != 0)
+        {
+            var c = confirm("Do You Want To Delete Emp " + empno);
+            if (c == true)
+            {
+                window.location.href = "/Events/GetData?Eno=" + empno;
+            }
+        }
+    }
+</script>
+

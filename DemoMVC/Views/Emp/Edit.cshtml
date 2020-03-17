@@ -1,0 +1,61 @@
+﻿@model DemoMVC.Models.EMPDATA
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+
+    @using (Html.BeginForm("Update", "Emp"))
+    {
+        <table>
+            <tr>
+                <td>Empno</td>
+                <td>@Html.TextBoxFor(a => a.EMPNO)</td>
+            </tr>
+            <tr>
+                <td>Ename</td>
+                <td>@Html.TextBoxFor(a => a.ENAME)</td>
+            </tr>
+            <tr>
+                <td>Job</td>
+                <td>@Html.TextBoxFor(a => a.JOB)</td>
+            </tr>
+            <tr>
+                <td>Mgr id</td>
+                <td>@Html.TextBoxFor(a => a.MGR)</td>
+            </tr>
+            <tr>
+                <td>HIREDATE</td>
+                <td>@Html.TextBoxFor(a => a.HIREDATE)</td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td>@Html.TextBoxFor(a => a.SAL)</td>
+            <tr>
+                <td>Comm</td>
+                <td>@Html.TextBoxFor(a => a.COMM)</td>
+            </tr>
+
+            <tr>
+                <td>Deptno</td>
+                <td>@Html.TextBoxFor(a => a.DEPTNO)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Edit" /></td>
+                
+            </tr>
+
+
+        </table>
+    
+    if (ViewBag.msg != null)
+    {
+        <h3>@ViewBag.msg</h3>
+    }
+
+@Html.ActionLink("Back to List","Index")
+
+}
+

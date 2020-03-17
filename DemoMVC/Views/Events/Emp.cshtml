@@ -1,0 +1,60 @@
+﻿@model DemoMVC.Models.EMPDATA
+@{
+    ViewBag.Title = "Emp";
+}
+
+<br />
+@using (Html.BeginForm("Update","Events"))
+{
+<table>
+    <tr>
+        <td>Empno</td>
+        <td>@Html.TextBoxFor(a=>a.EMPNO,new { onblur = "func1();" })</td>
+    </tr>
+    <tr>
+        <td>Ename</td>
+        <td>@Html.TextBoxFor(b => b.ENAME)</td>
+    </tr>
+    <tr>
+        <td>Job</td>
+        <td>@Html.TextBoxFor(c => c.JOB)</td>
+    </tr>
+    <tr>
+        <td>Mgr</td>
+        <td>@Html.TextBoxFor(d => d.MGR)</td>
+    </tr>
+    <tr>
+        <td>HireDate</td>
+        <td>@Html.TextBoxFor(b => b.HIREDATE)</td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td>@Html.TextBoxFor(b => b.SAL)</td>
+    </tr>
+    <tr>
+        <td>Commission</td>
+        <td>@Html.TextBoxFor(b => b.COMM)</td>
+    </tr>
+    <tr>
+        <td>Deptno</td>
+        <td>@Html.TextBoxFor(b => b.DEPTNO)</td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Update"></td>
+    </tr>
+    </table>
+    if(ViewBag.msg!=null)
+    {
+        <h2>@ViewBag.msg</h2>
+    }
+}
+<script>
+    function func1() {
+
+        var empno = document.getElementById("EMPNO").value;
+        alert(empno);
+        window.location.href = "/Events/GetEmp?e=" + empno;
+
+    }
+</script>
+

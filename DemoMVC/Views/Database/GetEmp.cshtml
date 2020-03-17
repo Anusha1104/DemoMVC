@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "GetEmp";
+}
+<script lang="javascript" type="text/javascript">
+    window.onload = function () {
+        document.getElementById('txtempno').onblur = function () {
+            //if (ViewBag.L != null) {
+            //    document.getElementById('txtename').value = ViewBag.L.Ename;
+            //        }
+            var value = this.value;
+            
+            
+        };
+    };
+</script>
+<h2>GetEmp</h2>
+@using (Html.BeginForm("GetEmpDetails","Database"))
+{
+    <table>
+        <tr>
+            <td>Empno</td>
+            <td>@Html.TextBox("txtempno")</td>
+        </tr>
+
+        <tr>
+            <td>Ename</td>
+            <td>@Html.TextBox("txtename")</td>
+        </tr>
+        <tr>
+            <td>Job</td>
+            <td>@Html.TextBox("txtjob")</td>
+        </tr>
+        <tr>
+            <td>Mgr</td>
+            <td>@Html.TextBox("txtmgr")</td>
+        </tr>
+        <tr>
+            <td>HireDate</td>
+            <td>@Html.TextBox("txthd")</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>@Html.TextBox("txtsal")</td>
+        </tr>
+        <tr>
+            <td>Commission</td>
+            <td>@Html.TextBox("txtcomm")</td>
+        </tr>
+        <tr>
+            <td>Deptno</td>
+            <td>@Html.TextBox("txtdeptno")</td>
+        </tr>
+
+    </table>
+}
+

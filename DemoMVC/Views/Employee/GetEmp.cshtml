@@ -1,0 +1,47 @@
+﻿@model DemoMVC.Models.EMPDATA
+@{
+    ViewBag.Title = "GetEmp";
+}
+
+<br />
+
+@if (Model!= null)
+{
+<table>
+    <tr>
+        <td>Empno</td>
+        <td>@Html.TextBoxFor(a => a.EMPNO)</td>  //@Html.TextBox("txtempno",(object)ViewBag.E.EMPNO)
+    </tr>
+    <tr>
+        <td>Ename</td>
+        <td>@Html.TextBoxFor(a => a.ENAME)</td>
+    </tr>
+    <tr>
+        <td>Job</td>
+        <td>@Html.TextBoxFor(a => a.JOB)</td>
+    </tr>
+    <tr>
+        <td>Mgr id</td>
+        <td>@Html.TextBoxFor(a => a.MGR)</td>
+    </tr>
+    <tr>
+        <td>HIREDATE</td>
+        <td>@Html.TextBoxFor(a => a.HIREDATE)</td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td>@Html.TextBoxFor(a => a.SAL)</td>
+    <tr>
+        <td>Comm</td>
+        <td>@Html.TextBoxFor(a => a.COMM)</td>
+    </tr>
+
+    <tr>
+        <td>Deptno</td>
+        <td>@Html.TextBoxFor(a => a.DEPTNO)</td>
+    </tr>
+
+
+</table>
+}
+

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "getEmps";
+}
+
+<h2></h2>
+
+@using (Html.BeginForm("SendEmp","Database"))
+{
+    <table>
+        <tr>
+            <td>Enter Ename</td>
+            <td>@Html.DropDownList("ddlEmpno", new SelectList(ViewBag.L, "Empno", "Ename"), "Select")</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" onclick="return func1();"/></td>
+        </tr>
+    </table>
+
+    if (ViewBag.str!= "")
+    {
+        <h3>@ViewBag.str</h3>
+    }
+}
+
+<script>
+    function func1() {
+          var eno = document.getElementById("ddlEmpno").value;
+        var result = confirm("Do You Want To Delete?");
+        alert(result);
+        if (result == true) {
+            return true;
+        }
+        else
+            return false;
+    }
+</script>

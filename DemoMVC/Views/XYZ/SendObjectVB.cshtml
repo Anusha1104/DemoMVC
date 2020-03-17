@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "SendObjectVB";
+
+    var str1 = ViewData["str"]
+       as DemoMVC.Models.Emp;
+
+    var str2 = TempData["str1"]
+      as DemoMVC.Models.Emp;
+}
+
+<h2>SendObjectVB</h2>
+
+
+@* viewbag object *@
+
+Empno:@ViewBag.emp.Empno
+<br />
+Ename:@ViewBag.emp.Ename
+<br />
+Salary:@ViewBag.emp.Salary
+<br />
+<br />
+
+@* viewdata object *@
+
+Empno:@str1.Empno
+<br />
+Ename:@str1.Ename
+<br />
+Salary:@str1.Salary
+<br />
+<br />
+
+@* tempdata object *@
+
+Empno:@str2.Empno
+<br />
+Ename:@str2.Ename
+<br />
+Salary:@str2.Salary
+<br />
+

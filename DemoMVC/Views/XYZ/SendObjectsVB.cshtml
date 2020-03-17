@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "SendObjectsVB";
+
+  
+}
+
+<h1>SendObjectsVB</h1>
+<h2>Viewbag</h2>
+@foreach (var item in ViewBag.xyz)
+{
+    <h3>
+        Empno:@item.Empno
+        Ename:@item.Ename
+        Salary:@item.Salary
+    </h3>
+}
+<h2>Viewdata</h2>
+@foreach (var item in ViewData["xyz"] as IList<DemoMVC.Models.Emp>)
+{
+    <h3>
+        Empno:@item.Empno
+        Ename:@item.Ename
+        Salary:@item.Salary
+    </h3>
+}
